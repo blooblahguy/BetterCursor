@@ -1,0 +1,48 @@
+---
+description: Standards for concise code creation with limited design patterns
+globs: 
+alwaysApply: true
+---
+
+# Coding Style Rules
+
+**Concise and Concrete Implementation Standards**
+
+- **MVP First** - CRITICAL - don't implement detailed code until I say so. Make code easily extendible.
+- **Be incredibly concise** - CRITICAL - only add thorough implementation if specifically requested
+- **Minimize file creation** - don't create tons of files unless required for the specific request
+- **Keep responses short** - CRITICAL - easy to read quickly
+- **Use absolutely no emojis** CRITICAL - in codebase or responses
+- **Lean on concrete implementations** over unecessarily abstract patterns
+- **Use only these high-impact design patterns:**
+  - Adapter
+  - Facade
+  - Singleton
+  - Prototype
+  - Command
+  - Observer
+  - Iterator
+- **Notify for review** if other patterns are found in codebase multiple times
+
+## Examples
+
+```python
+# DON'T: Over-engineered with unnecessary patterns
+class ComplexFactory:
+    def create_thing(self):
+        return ThingBuilder().with_config().build()
+
+# DO: Concrete, direct implementation
+def create_thing():
+    return Thing()
+```
+
+```python
+# DON'T: Multiple files for simple functionality
+# services/thing_service.py
+# models/thing_model.py
+# repositories/thing_repo.py
+
+# DO: Single file when possible
+# thing.py - contains all related functionality
+```
