@@ -8,7 +8,7 @@ alwaysApply: true
 
 **Concise and Concrete Implementation Standards**
 
-- **MVP First** - CRITICAL - don't implement detailed code until I say so. Make code easily extendible.
+- **MVP First** - CRITICAL - don't implement detailed code until I say so. Make code easily extendible
 - **Be incredibly concise** - CRITICAL - only add thorough implementation if specifically requested
 - **Minimize file creation** - don't create tons of files unless required for the specific request
 - **Keep responses short** - CRITICAL - easy to read quickly
@@ -77,29 +77,4 @@ repositories/thing_repo.js
 
 # DO: Single file when possible
 thing.js - contains all related functionality
-```
-
-```bash
-# DON'T: Multiple files for simple functionality
-services/thing_service.py
-models/thing_model.py
-repositories/thing_repo.py
-
-# DO: Single file when possible
-thing.py - contains all related functionality
-```
-
-```bash
-# DON'T: Multiple files for simple functionality
-services/ThingService.java
-models/ThingModel.java
-repositories/ThingRepo.java
-
-# DO: Single file when possible
-Thing.java - contains all related functionality
-```
-# repositories/thing_repo.py
-
-# DO: Single file when possible
-# thing.py - contains all related functionality
 ```
