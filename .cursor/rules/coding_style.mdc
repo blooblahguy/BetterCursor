@@ -13,7 +13,7 @@ alwaysApply: true
 - **Minimize file creation** - don't create tons of files unless required for the specific request
 - **Keep responses short** - CRITICAL - easy to read quickly
 - **Use absolutely no emojis** CRITICAL - in codebase or responses
-- **Lean on concrete implementations** over unecessarily abstract patterns
+- **Lean on concrete implementations** over unnecessarily abstract patterns
 - **Use only these high-impact design patterns:**
   - Adapter
   - Facade
@@ -26,6 +26,22 @@ alwaysApply: true
 
 ## Examples
 
+### Over-engineering vs Concrete Implementation
+
+```javascript
+// DON'T: Over-engineered with unnecessary patterns
+class ComplexFactory {
+  createThing() {
+    return new ThingBuilder().withConfig().build();
+  }
+}
+
+// DO: Concrete, direct implementation
+function createThing() {
+  return new Thing();
+}
+```
+
 ```python
 # DON'T: Over-engineered with unnecessary patterns
 class ComplexFactory:
@@ -37,10 +53,51 @@ def create_thing():
     return Thing()
 ```
 
-```python
+```java
+// DON'T: Over-engineered with unnecessary patterns
+public class ComplexFactory {
+    public Thing createThing() {
+        return new ThingBuilder().withConfig().build();
+    }
+}
+
+// DO: Concrete, direct implementation
+public Thing createThing() {
+    return new Thing();
+}
+```
+
+### File Organization
+
+```bash
 # DON'T: Multiple files for simple functionality
-# services/thing_service.py
-# models/thing_model.py
+services/thing_service.js
+models/thing_model.js
+repositories/thing_repo.js
+
+# DO: Single file when possible
+thing.js - contains all related functionality
+```
+
+```bash
+# DON'T: Multiple files for simple functionality
+services/thing_service.py
+models/thing_model.py
+repositories/thing_repo.py
+
+# DO: Single file when possible
+thing.py - contains all related functionality
+```
+
+```bash
+# DON'T: Multiple files for simple functionality
+services/ThingService.java
+models/ThingModel.java
+repositories/ThingRepo.java
+
+# DO: Single file when possible
+Thing.java - contains all related functionality
+```
 # repositories/thing_repo.py
 
 # DO: Single file when possible

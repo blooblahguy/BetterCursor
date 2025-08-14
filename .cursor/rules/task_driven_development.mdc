@@ -1,9 +1,7 @@
 ---
-description: Standards for new feature development with proper planning, research, and task breakdown
-globs:
+description: When requesting a new feature or large change
 alwaysApply: false
 ---
-
 # Task-Driven Development
 
 **Breaking Down Large Features into Manageable Tasks**
