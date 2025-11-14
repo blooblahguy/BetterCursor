@@ -54,7 +54,7 @@ alwaysApply: false
 
 ```markdown
 # DON'T: No task organization
-# Just start coding without plan
+# DON'T: Just start coding without plan
 
 # DO: Structured task breakdown
 # TASKS.md
@@ -71,7 +71,7 @@ alwaysApply: false
 
 ```markdown
 # DON'T: No research or planning
-# Assume approach without investigation
+# DON'T: Assume approach without investigation
 
 # DO: Research-driven decisions
 # Research: Stripe vs Square comparison

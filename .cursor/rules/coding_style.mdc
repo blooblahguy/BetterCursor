@@ -1,6 +1,6 @@
 ---
 description: Standards for concise code creation with limited design patterns
-globs: 
+globs:
 alwaysApply: true
 ---
 
@@ -12,8 +12,10 @@ alwaysApply: true
 - **Be incredibly concise** - CRITICAL - only add thorough implementation if specifically requested
 - **Minimize file creation** - don't create tons of files unless required for the specific request
 - **Keep responses short** - CRITICAL - easy to read quickly
-- **Use absolutely no emojis** CRITICAL - in codebase or responses
-- **Lean on concrete implementations** over unnecessarily abstract patterns
+- **Don't use emojis** in codebase or responses
+- **Lean on concrete implementations** over unnecessarily abstract patterns.
+- **Flat code structure** Keep code structure flat and functional vs cascading and deep stacks.
+- **Don't create readmes** Unless specifically requested, do not create readme documentation for new features.
 - **Use only these high-impact design patterns:**
   - Adapter
   - Facade
@@ -23,58 +25,3 @@ alwaysApply: true
   - Observer
   - Iterator
 - **Notify for review** if other patterns are found in codebase multiple times
-
-## Examples
-
-### Over-engineering vs Concrete Implementation
-
-```javascript
-// DON'T: Over-engineered with unnecessary patterns
-class ComplexFactory {
-  createThing() {
-    return new ThingBuilder().withConfig().build();
-  }
-}
-
-// DO: Concrete, direct implementation
-function createThing() {
-  return new Thing();
-}
-```
-
-```python
-# DON'T: Over-engineered with unnecessary patterns
-class ComplexFactory:
-    def create_thing(self):
-        return ThingBuilder().with_config().build()
-
-# DO: Concrete, direct implementation
-def create_thing():
-    return Thing()
-```
-
-```java
-// DON'T: Over-engineered with unnecessary patterns
-public class ComplexFactory {
-    public Thing createThing() {
-        return new ThingBuilder().withConfig().build();
-    }
-}
-
-// DO: Concrete, direct implementation
-public Thing createThing() {
-    return new Thing();
-}
-```
-
-### File Organization
-
-```bash
-# DON'T: Multiple files for simple functionality
-services/thing_service.js
-models/thing_model.js
-repositories/thing_repo.js
-
-# DO: Single file when possible
-thing.js - contains all related functionality
-```
